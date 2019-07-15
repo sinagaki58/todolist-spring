@@ -5,14 +5,14 @@
     <title>タスク一覧</title>
 </head>
 <body>
-<!--<a th:href="@{tasks/new}">作成</a>-->
+<a th:href="@{tasks/new}">作成</a>
 <p th:if="${tasks.isEmpty()}">タスクがありません。</p>
 <ul th:unless="${tasks.isEmpty()}">
     <li th:each="task: ${tasks}">
-<!--        <a th:href="@{tasks/{id}/edit(id=${task.id})}">-->
+        <a th:href="@{tasks/{id}/edit(id=${task.id})}">
             <span th:unless="${task.done}" th:text="${task.content}"></span>
             <s th:if="${task.done}" th:text="${task.content}"></s>
-<!--        </a>-->
+        </a>
     </li>
 </ul>
 </body>
